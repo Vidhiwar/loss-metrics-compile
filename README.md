@@ -17,10 +17,12 @@ RESEARCH-PAPER:  {Title: "Invertible Residual Network with Regularization for Ef
 DIRECTORY-TREE: {[
 
       res: "Directory: MSC Files",
-
       lib: "Directory: Losses and Metrices":[
             boundaryLoss.py:  "Python: Pytorch implementation of Boundary Loss",
             roughnessIndex.py:  "Python: Pytorch implementation of Roughness Indexe"]}
+            
+      output: "Directory: Results are written",
+      data: "Directory: contains the data",]}
                                        
 HOW-TO-USE: {[
 
