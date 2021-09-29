@@ -103,13 +103,6 @@ def compute_boundary_loss2D(mask_gt,mask_pred):
     
     grad_gt  = dilation(grad_gt,4)
     grad_pred  = dilation(grad_pred,4)
-      
-    fig, (ax1, ax2, ax3 ,ax4) = plt.subplots(nrows=1, ncols=4, figsize=(14,14),sharex=True, sharey=True)
-    
-    ax1.imshow(mask_gt.numpy().astype(np.float), cmap=plt.cm.gray)
-    ax2.imshow(mask_pred.numpy().astype(np.float), cmap=plt.cm.gray)
-    ax3.imshow(grad_gt[0,0,:,:].numpy().astype(np.float), cmap=plt.cm.gray)
-    ax4.imshow(grad_pred[0,0,:,:].numpy().astype(np.float), cmap=plt.cm.gray)
     
     borders_gt = grad_gt[0,0,:,:].bool()
     borders_pred = grad_pred[0,0,:,:].bool()
@@ -167,15 +160,6 @@ def compute_boundary_loss3D(mask_gt,mask_pred):
     
     grad_gt  = dilation(grad_gt,3,3)
     grad_pred  = dilation(grad_pred,3,3)
-    
-    fig, (ax1, ax2, ax3 ,ax4) = plt.subplots(nrows=1, ncols=4, figsize=(14,14),sharex=True, sharey=True)
-    
-    i = 15
-    
-    ax1.imshow(mask_gt[i,:,:].numpy().astype(np.float), cmap=plt.cm.gray)
-    ax2.imshow(mask_pred[i,:,:].numpy().astype(np.float), cmap=plt.cm.gray)
-    ax3.imshow(grad_gt[0,0,i,:,:].numpy().astype(np.float), cmap=plt.cm.gray)
-    ax4.imshow(grad_pred[0,0,i,:,:].numpy().astype(np.float), cmap=plt.cm.gray)
     
     borders_gt = grad_gt[0,0,:,:,:].bool()
     borders_pred = grad_pred[0,0,:,:,:].bool()
